@@ -270,6 +270,8 @@
   .sr-input { width: 100% !important; }
   .sr-btn   { width: 100%; }
   .sr-timebox { width: 100% !important; }
+  .sr-checkbox-label { flex-wrap: wrap; }
+  .sr-time-row { width: 100%; }
 }
 
 /* ---------- CUSTOM TIME PICKER ---------- */
