@@ -82,6 +82,12 @@ function srUpdateTime(boxId, suffix) {
   box.querySelector('.sr-th').textContent = ah.textContent;
   box.querySelector('.sr-tm').textContent = am.textContent;
   box.querySelector('input[type=hidden]').value = ah.textContent + ':' + am.textContent;
+
+  // Auto-recalc if results already visible
+  var results = document.getElementById('sr-' + suffix + '-results');
+  if (results && results.style.display !== 'none') {
+    if (suffix === 'wu') srCalcWakeUp(); else srCalcBedTime();
+  }
 }
 
 function srCloseDropdown() {
@@ -185,6 +191,10 @@ function srSetNow() {
   document.getElementById('sr-wu-h').textContent     = hh;
   document.getElementById('sr-wu-m').textContent     = mm;
   document.getElementById('sr-wu-sleep').value       = hh + ':' + mm;
+
+  // Auto-recalc if results already visible
+  var results = document.getElementById('sr-wu-results');
+  if (results && results.style.display !== 'none') srCalcWakeUp();
 }
 
 function srCalcWakeUp() {
