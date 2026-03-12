@@ -1,0 +1,501 @@
+/* =============================================
+   Schlafrechner WordPress Plugin – Stylesheet
+   ============================================= */
+
+.schlafrechner-wrap {
+  font-family: 'Montserrat', sans-serif;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.schlafrechner-title {
+  text-align: center;
+  font-size: clamp(22px, 4vw, 26px);
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.8rem !important;
+}
+
+/* ---------- TABS ---------- */
+.sr-tabs {
+  display: flex;
+  border-radius: 14px 14px 0 0;
+  overflow: hidden;
+}
+
+.sr-tab-btn {
+  flex: 1;
+  padding: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: #999999;
+  transition: all 0.3s ease;
+  letter-spacing: 0.01em;
+}
+
+.sr-tab-btn.active {
+  background: #f5a800;
+  color: #000000;
+  border-radius: 12px 12px 0 0;
+}
+
+.sr-tab-btn:not(.active):hover {
+  background: rgba(245,168,0,0.15);
+  color: #f5a800;
+  border-radius: 12px 12px 0 0;
+}
+
+/* ---------- CARD ---------- */
+.sr-card {
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-bottom: 3px solid #f5a800;
+  border-radius: 0 0 18px 18px;
+  padding: 2.5rem 2rem;
+  color: #111111;
+}
+
+/* ---------- PANELS ---------- */
+.sr-panel {
+  display: none;
+  animation: srFadeIn 0.3s ease;
+}
+
+.sr-panel.active {
+  display: block;
+}
+
+@keyframes srFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sr-description {
+  color: #666666;
+  font-size: 0.95rem;
+  margin-bottom: 2rem !important;
+  line-height: 1.5;
+}
+
+/* ---------- FIELDS ---------- */
+.sr-field {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.sr-label {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #111111;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.sr-info {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #999999;
+  font-size: 0.7rem;
+  color: #999999;
+  cursor: help;
+  position: relative;
+  font-style: normal;
+}
+
+.sr-info:hover::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111111;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 400;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  z-index: 100;
+}
+
+/* ---------- INPUTS ---------- */
+.sr-input {
+  background: #f2f2f2 !important;
+  border: 2px solid transparent !important;
+  border-radius: 10px !important;
+  padding: 0.75rem 1rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: #111111 !important;
+  outline: none !important;
+  transition: border-color 0.2s !important;
+  width: 160px !important;
+  text-align: center !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  height: 50px !important;
+}
+
+.sr-input:focus {
+  border-color: #f5a800 !important;
+}
+
+.sr-input::-webkit-outer-spin-button,
+.sr-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* ---------- BUTTON ---------- */
+.sr-btn {
+  display: block;
+  width: 65%;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  background: #f5a800;
+  color: #000000;
+  border: none !important;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  text-transform: uppercase;
+  box-shadow: none !important;
+}
+
+.sr-btn:hover {
+  background: #d99200 !important;
+  transform: translateY(-1px);
+  color: #000000 !important;
+}
+
+.sr-btn:active {
+  transform: translateY(0);
+}
+
+/* ---------- RESULTS ---------- */
+.sr-results {
+  margin-top: 2rem;
+  animation: srFadeIn 0.4s ease;
+}
+
+.sr-results-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #666666;
+  margin-bottom: 1rem !important;
+}
+
+.sr-results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+}
+
+.sr-result-card {
+  background: #f5f5f5;
+  border: 1px solid #f5a800;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: background 0.2s, transform 0.2s;
+  cursor: default;
+}
+
+.sr-result-card:hover {
+  background: rgba(245,168,0,0.15);
+  transform: translateY(-2px);
+}
+
+.sr-result-card.sr-best {
+  border-color: #f5a800;
+  background: rgba(245,168,0,0.12);
+}
+
+.sr-result-time {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111111;
+}
+
+.sr-result-cycles {
+  font-size: 0.78rem;
+  color: #666666;
+  margin-top: 0.25rem;
+}
+
+.sr-best-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f5a800;
+  margin-top: 0.3rem;
+}
+
+.sr-tip {
+  margin-top: 1.2rem;
+  font-size: 0.82rem;
+  color: #666666;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .sr-field { flex-direction: column; align-items: flex-start; }
+  .sr-input { width: 100% !important; }
+  .sr-btn   { width: 100%; }
+  .sr-timebox { width: 100% !important; }
+}
+
+/* ---------- CUSTOM TIME PICKER ---------- */
+.sr-timebox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2f2f2;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 0.75rem 1.2rem;
+  width: 160px;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  user-select: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111111;
+  position: relative;
+  box-sizing: border-box;
+  height: 50px;
+}
+
+.sr-timebox:hover,
+.sr-timebox-open, .sr-input:hover {
+  border-color: #f5a800;
+}
+
+.sr-tsep {
+  margin: 0 0.15rem;
+  font-weight: 600;
+}
+
+/* Dropdown */
+.sr-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: #ffffff;
+  border: 2px solid #f5a800;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  overflow: hidden;
+}
+
+.sr-dropdown-cols {
+  display: flex;
+}
+
+.sr-dropdown-col {
+  flex: 1;
+  max-height: 200px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #f5a800 #f2f2f2;
+}
+
+.sr-dropdown-col:first-child {
+  border-right: 1px solid #e0e0e0;
+}
+
+.sr-dropdown-col::-webkit-scrollbar { width: 4px; }
+.sr-dropdown-col::-webkit-scrollbar-track { background: #f2f2f2; }
+.sr-dropdown-col::-webkit-scrollbar-thumb { background: #f5a800; border-radius: 2px; }
+
+.sr-dd-item {
+  padding: 0.5rem 0;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333333;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sr-dd-item:hover {
+  background: rgba(245,168,0,0.15);
+}
+
+.sr-dd-item.active {
+  background: #f5a800;
+  color: #000000;
+  font-weight: 700;
+}
+
+/* ---------- RESET BUTTON ---------- */
+.sr-reset-btn {
+  display: block;
+  margin: 0.75rem auto 0;
+  background: none;
+  border: none !important;
+  color: #999999;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  padding: 0.25rem 0.5rem;
+  box-shadow: none !important;
+}
+
+.sr-reset-btn:hover {
+  color: #f5a800 !important;
+  background: none !important;
+  transform: none;
+}
+
+/* ---------- NOW BUTTON ---------- */
+.sr-time-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sr-now-btn {
+  height: 50px;
+  padding: 0 0.9rem;
+  background: transparent;
+  border: 2px solid #f5a800 !important;
+  border-radius: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #f5a800;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: none !important;
+  white-space: nowrap;
+}
+
+.sr-now-btn:hover {
+  background: #f5a800 !important;
+  color: #000000 !important;
+}
+
+/* ---------- CHECKBOX ---------- */
+.sr-offset-field {
+  justify-content: flex-start !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.sr-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: 500 !important;
+  color: #555555;
+  font-size: 0.88rem;
+  user-select: none;
+}
+
+.sr-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #cccccc;
+  border-radius: 4px;
+  background: #f2f2f2;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s;
+  position: relative;
+}
+
+.sr-checkbox:checked {
+  background: #f5a800;
+  border-color: #f5a800;
+}
+
+.sr-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid #000000;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.sr-checkbox:hover {
+  border-color: #f5a800;
+}
+
+.sr-checkbox-text {
+  color: #555555;
+  font-size: 0.88rem;
+}
+
+/* ---------- OFFSET NUMBER INPUT ---------- */
+.sr-offset-input {
+  width: 44px !important;
+  padding: 0.1rem 0.3rem !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 0.88rem !important;
+  font-weight: 700 !important;
+  color: #111111 !important;
+  background: #ffffff !important;
+  border: 1.5px solid #cccccc !important;
+  border-radius: 5px !important;
+  text-align: center !important;
+  outline: none !important;
+  box-shadow: none !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+  vertical-align: middle;
+  transition: border-color 0.2s !important;
+}
+
+.sr-offset-input:focus {
+  border-color: #f5a800 !important;
+}
+
+.sr-offset-input::-webkit-outer-spin-button,
+.sr-offset-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
